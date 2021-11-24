@@ -1,10 +1,10 @@
 .isage {
-    background-color: cornflowerblue;
+    background-color: rgb(223, 228, 236);
 }
 
 .noage {
     font-weight: bold;
-    background-color: crimson;
+    background-color: rgb(231, 219, 221);
 }
 
 .example-form-field {

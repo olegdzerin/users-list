@@ -6,5 +6,6 @@ export interface User {
    role: string;
    phone: string;
    website: string;
-   age?: number
+   age?: number;
+   urlImg?: string
 }

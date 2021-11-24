@@ -54,15 +54,22 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-import { AngMatComponent } from './ang-mat/ang-mat.component';
+import { AngMatComponent } from './doc/ang-mat/ang-mat.component';
 import { UserListModule } from './user-list/user-list.module';
+import { UserItemComponent } from './user-item/user-item.component';
+import { UserItemSidebarComponent } from './user-item/user-item-sidebar/user-item-sidebar.component';
+import { UserItemBodyComponent } from './user-item/user-item-body/user-item-body.component';
+import { APP_CONFIG, APP_CONFIG_NEW, DI_CONFIG, DI_CONFIG_NEW } from './config/app.config';
+import { UsersService } from './users.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DocComponent,
     MainComponent,
-    AngMatComponent
+    AngMatComponent,
+    
+  
   ],
   imports: [
     BrowserModule,
@@ -77,7 +84,11 @@ import { UserListModule } from './user-list/user-list.module';
    MatMenuModule,
    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    UsersService,
+    {provide: APP_CONFIG, useValue: DI_CONFIG },
+    {provide: APP_CONFIG_NEW, useValue: DI_CONFIG_NEW}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

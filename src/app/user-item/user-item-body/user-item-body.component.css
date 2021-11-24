@@ -1,0 +1,9 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+.flex-item{
+    align-self: center;
+    margin: 10px;
+    background-color: cornsilk;
+}

@@ -1,0 +1,31 @@
+<div class="flex-container">
+  <div class="flex-item">
+    <mat-selection-list #shoes>
+      <mat-list-option *ngFor="let user of users">
+        <div>
+          <div [ngClass]="user.age ? 'isage': 'noage'">
+            <a [routerLink]="['/user',user.id]">{{user.name}}</a>
+
+          </div>
+          <div *ngIf="user.age">Возраст: {{user.age}}</div>
+        </div>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="flex-item">
+   
+    <mat-selection-list #shoes>
+      <mat-list-option *ngFor="let user of usersList">
+        <div>
+          <div [ngClass]="user.age ? 'isage': 'noage'">
+            <a [routerLink]="['/user',user.id]">{{user.name}}</a>
+
+          </div>
+          <div *ngIf="user.age">Возраст: {{user.age}}</div>
+        </div>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
+title1:{{title1}}<br>title2:{{title2}}<br>titleDecorator: {{titleDecorator}}
+titleSimple: {{titleWithoutDI}}

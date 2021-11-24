@@ -1,0 +1,13 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Пошук користувача</mat-label>
+    <input matInput [(ngModel)]="findValue" (keyup.enter)="filterFn(findValue)" placeholder="" formControlName="search" >
+  
+      <mat-icon matSuffix>search</mat-icon>
+  
+
+    <mat-hint class="mat-hit" (click)="updateUsersFn()">Вернутися до повного списоку користувачів</mat-hint>
+  </mat-form-field>
+</div>
+
+

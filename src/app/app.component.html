@@ -4,28 +4,21 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>My App</span>
-  <span class="example-spacer">
-    <a href="#"> home</a> 
-  </span>
-  <span class="example-spacer">
-    <a href="#"> dashbord</a>  
-  </span>
+
+
   <div class="example-spacer">
     <a href="#"> home</a> 
-  </div>
-  <div class="example-spacer">
-    <a href="doc">doc</a>  
-  </div>
-  <div class="example-spacer">
-    <a href="ang-mat"> ang-material</a>
-  </div>
-  <div class="example-spacer">
-    <a href="users"> users</a>  
-  </div>
-  <div class="example-spacer">
-    <a href="#"> dashbord</a>  
   </div>
 
+  
+  <div class="example-spacer">
+    <a routerLink="/users"> users</a>  
+  </div>
+  <button mat-button [matMenuTriggerFor]="menu">Doc</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><a href="ang-mat"> ang-material</a></button>
+    <button mat-menu-item>    <a routerLink="/doc">docRouterLink</a></button>
+  </mat-menu>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
@@ -35,4 +28,3 @@
 </mat-toolbar>
  
 <router-outlet></router-outlet>
-<p>dashbord</p>

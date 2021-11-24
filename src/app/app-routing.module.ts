@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AngMatComponent } from './ang-mat/ang-mat.component';
+import { AngMatComponent } from './doc/ang-mat/ang-mat.component';
 import { DocComponent } from './doc/doc.component';
 import { MainComponent } from './main/main.component';
 
