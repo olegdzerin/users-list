@@ -1,8 +1,7 @@
 <div class="container">
-    {{user[0].name}}
-    <mat-grid-list cols="6" rowHeight="200px">
+    {{user.name}}
+    <mat-grid-list cols="6" rowHeight="250px">
         <mat-grid-tile [colspan]=2 [rowspan]=3 [style.background]="'lightblue'">
-/
             <app-user-item-sidebar [id]="id" [user]="user"></app-user-item-sidebar>
         </mat-grid-tile>
         <mat-grid-tile [colspan]=4 [rowspan]=3 [style.background]="'lightpink'">

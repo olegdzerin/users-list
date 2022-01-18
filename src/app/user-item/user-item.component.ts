@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../config/config';
 import { UsersService } from '../users.service';
 export interface Tile {
   color: string;
@@ -15,20 +16,9 @@ export interface Tile {
 })
 export class UserItemComponent implements OnInit {
     id: string;
-    user: any;
+    user: User;
     idMap: string;
-    tiles1: Tile[] = [
-      {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-      {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-      {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-      {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-    ];
-    tiles: Tile[] = [
-      {text: `<app-user-item-sidebar></app-user-item-sidebar>`,
-       cols: 2, rows: 3, color: 'lightblue'},
-      {text: 'Two', cols: 4, rows: 3, color: 'lightgreen'},
-    
-    ];
+  
   constructor(
     private router: Router, 
     private activatedRoute: ActivatedRoute,
@@ -40,10 +30,10 @@ export class UserItemComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       data => {
         this.id = data.id;
-        this.user = this.usersService.getUser().filter((item) => {
+        const filterArray = this.usersService.getUser().filter((item) => {
           if(item.id === Number(this.id)) return true
         });
-        console.log(this.user[0]);
+        this.user = filterArray[0]
       }
     );
   

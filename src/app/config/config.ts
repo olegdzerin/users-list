@@ -1,3 +1,5 @@
+import { AbstractControl, ValidationErrors } from "@angular/forms";
+
 export interface User {
    id: number;
    name: string;
@@ -8,4 +10,12 @@ export interface User {
    website: string;
    age?: number;
    urlImg?: string
-}
+};
+
+export interface ValidatorFn {
+   (control: AbstractControl): ValidationErrors | null
+ };
+
+ export interface ValFn {
+    (con: string): Number
+ }
